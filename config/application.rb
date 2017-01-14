@@ -12,6 +12,9 @@ module BioPortal
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Load BioPortal-specific configuration options
+    config.bp = config_for(:bioportal)
+
     # Serve error pages from the Rails app itself, instead of using static error pages in /public.
     config.exceptions_app = self.routes
   end

@@ -52,6 +52,7 @@ class HomeController < ApplicationController
     @direct_annotations = @ri_stats[:total][:direct]
     @direct_expanded_annotations = @ri_stats[:total][:ancestors]
     @analytics = LinkedData::Client::Analytics.last_month
+    @version = Rails.configuration.bp['version']
   end
 
   def render_layout_partial
@@ -87,6 +88,8 @@ class HomeController < ApplicationController
   def feedback
     # Show the header/footer or not
     feedback_layout = params[:pop].eql?("true") ? "popup" : "ontology"
+
+    @support_email = Rails.configuration.bp['emails']['support']
 
     # We're using a hidden form field to trigger for error checking
     # If sim_submit is nil, we know the form hasn't been submitted and we should

@@ -221,7 +221,7 @@ class OntologiesController < ApplicationController
       #  DataAccess.createUserSubscriptions(@ontology.administeredBy, @ontology.ontologyId, NOTIFICATION_TYPES[:all])
       # end
       if @ontology_saved.summaryOnly
-        redirect_to "/ontologies/success/#{@ontology.acronym}"
+        redirect_to "/ontologies/success/#{@ontology.acronym}", locals: { support_email: Rails.configuration.bp['emails']['support'] }
       else
         redirect_to new_ontology_submission_url(ontology_id: @ontology.acronym)
       end

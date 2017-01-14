@@ -1,0 +1,36 @@
+default: &default
+  emails:
+    admin: admin@bioontology.org
+    error: admin@bioontology.org
+    support: support@bioontology.org
+
+  version: '4.29 (October 2016)'
+
+  # Enables a help page maintained elsewhere that is read and displayed. Content is stored in a div with id 'bodyContent'.
+  wiki_help_page: http://www.bioontology.org/wiki/index.php/BioPortal_Help
+
+production:
+  <<: *default
+
+staging:
+  <<: *default
+
+appliance:
+  <<: *default
+
+  emails:
+    admin: recipient@example.org
+    error: recipient@example.org
+    support: recipient@example.org
+
+  version: ''
+
+  # Enables a help page maintained elsewhere that is read and displayed. Content is stored in a div with id 'bodyContent'.
+  wiki_help_page: ''
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+

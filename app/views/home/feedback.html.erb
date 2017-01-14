@@ -30,7 +30,7 @@ Please include the following:
 	</ul>
 </div>
 </p>
-<p>You can use the form below or email us at <a href="mailto:<%=$SUPPORT_EMAIL%>"><%=$SUPPORT_EMAIL%></a></p>
+<p>You can use the form below or email us at <a href="mailto:<%= @support_email %>"><%= @support_email %></a></p>
 
 <%unless @errors.nil?%>
 <div style="color:red;margin-bottom:1em;">
